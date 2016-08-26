@@ -7,10 +7,15 @@ def iter_fasta_sequences(fasta_path):
     :yields: the sequences in the fasta file
     """
     with open(fasta_path) as fp:
-        for i, line in enumerate(fp):
-            if i % 2 != 0:
-                yield line.strip()
-
+        seq = None
+        for line in fp:
+            if line.startswith('>'):
+                if seq is not None:
+                    yield seq
+                seq = ''
+            else:
+                seq += line.strip()
+        yield seq
 
 def assemble_contig(fragments):
     """
@@ -42,7 +47,7 @@ def assemble_two_fragments(contig_a, contig_b):
     :param str super_contig: The super contig.
     :param str contig: The Contig.
     :return: The assembled contig if assembly was successful, else None.
-    
+
     >>> assemble_two_fragments('CT', 'CTA')
     'CTA'
     >>> assemble_two_fragments('CTCT', 'CTA')
