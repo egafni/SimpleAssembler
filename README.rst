@@ -46,9 +46,16 @@ the candidate fragment is removed from the List, and the new assembled fragment 
 in.  This reduces the total size of the List by one (since two fragments have been merged into one), and the
 process is repeated until there is only one fragment left.  The final fragment is the original contig.
 
-This is not a very memory efficient algorithm since all fragments are stored in memory.  It's run time is also
-not great, and is O(|Fragments|^2) since the worst case scenario is each fragment is compared to all remaining fragments.
+This is not a very memory efficient algorithm since all fragments are read and stored in memory.  It's Big-O run time is
+ O(|Fragments|^2) since the worst case scenario is each fragment is compared to all remaining fragments.
 
+Invocation
+============
+
+.. code-block:: bash
+
+    $ python simple_assembler.py test_input.fasta
+    ATTAGACCTGCCGGAATAC
 
 
 Testing

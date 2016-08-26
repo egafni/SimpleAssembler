@@ -11,7 +11,7 @@ import string
 import random
 
 
-def random_string(size, chars=string.ascii_uppercase):
+def random_sequence(size, chars='ACTG'):
     return ''.join(random.choice(chars) for _ in range(size))
 
 
@@ -41,8 +41,8 @@ def create_contig_and_fragments(contig, overlap_size, fragment_size):
 
 
 def test_assemble_contig():
-    contig_scaffold = random_string(1000)
-    for overlap_size, fragment_size in [(5, 8), (6, 10), (15, 25), (18, 25)]:
+    contig_scaffold = random_sequence(1000)
+    for overlap_size, fragment_size in [(9, 16), (10, 15), (13, 20), (13, 25)]:
         # Note you need enough separation between overlap_size and fragment_size, or
         # it will be too likely for there to be multiple ways to scaffold
         true_contig, fragments = create_contig_and_fragments(contig_scaffold, overlap_size, fragment_size)

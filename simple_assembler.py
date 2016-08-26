@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import argparse
 
+
 def iter_fasta_sequences(fasta_path):
     """
     :yields: the sequences in the fasta file
@@ -75,7 +76,7 @@ def assemble_two_fragments(contig_a, contig_b):
 
 if __name__ == '__main__':
     p = argparse.ArgumentParser()
-    p.add_argument('in_fasta')
+    p.add_argument('in_fasta', help="input fasta file")
     args = p.parse_args()
 
     fasta_fragments = iter_fasta_sequences(args.in_fasta)
