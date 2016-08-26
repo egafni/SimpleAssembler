@@ -18,14 +18,15 @@ In addition to the code you wrote, we also ask for a README describing your gene
 Example input
 =============
 
->Frag_56
-ATTAGACCTG
->Frag_57
-CCTGCCGGAA
->Frag_58
-AGACCTGCCG
->Frag_59
-GCCGGAATAC
+.. code-block:: bash
+    >Frag_56
+    ATTAGACCTG
+    >Frag_57
+    CCTGCCGGAA
+    >Frag_58
+    AGACCTGCCG
+    >Frag_59
+    GCCGGAATAC
 
 Example output
 ===============
@@ -37,7 +38,7 @@ Solution
 
 The algorithm works by reading all of the input fragments into memory and storing into a List.
 A fragment is popped off the List, and the rest of the fragments are iterated over as candidate fragments
-for assembly.  If the fragment can be assembled to a candidate fragment (using more than half it's sequence),
+for assembly.  If the fragment can be assembled with the candidate fragment (using more than half it's sequence),
 the candidate fragment is removed from the List, and the new assembled fragment is added back
 in.  This reduces the total size of the List by one (since two fragments have been merged into one), and the
 process is repeated until there is only one fragment left.  The final fragment is the original contig.
