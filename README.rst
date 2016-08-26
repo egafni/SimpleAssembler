@@ -19,6 +19,7 @@ Example input
 =============
 
 .. code-block:: bash
+
     >Frag_56
     ATTAGACCTG
     >Frag_57
@@ -31,7 +32,9 @@ Example input
 Example output
 ===============
 
-ATTAGACCTGCCGGAATAC
+.. code-block:: bash
+
+    ATTAGACCTGCCGGAATAC
 
 Solution
 =========
