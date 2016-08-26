@@ -47,7 +47,7 @@ in.  This reduces the total size of the List by one (since two fragments have be
 process is repeated until there is only one fragment left.  The final fragment is the original contig.
 
 This is not a very memory efficient algorithm since all fragments are read and stored in memory.  It's Big-O run time is
- O(|Fragments|^2) since the worst case scenario is each fragment is compared to all remaining fragments.
+O(|Fragments|^2) since the worst case scenario is each fragment is compared to all remaining fragments.
 
 Invocation
 ============
