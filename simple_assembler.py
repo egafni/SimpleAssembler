@@ -38,10 +38,11 @@ def assemble_two_fragments(contig_a, contig_b):
     """
     Assembles two contigs if they overlap by more than half of the bases of at least one of the contigs.
     Note, an alternative is to do a smith waterman and then look for left/right matches on right_seq.
-    
+
     :param str super_contig: The super contig.
     :param str contig: The Contig.
     :return: The assembled contig if assembly was successful, else None.
+    
     >>> assemble_two_fragments('CT', 'CTA')
     'CTA'
     >>> assemble_two_fragments('CTCT', 'CTA')
