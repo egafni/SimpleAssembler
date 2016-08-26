@@ -7,7 +7,6 @@ Simulate fragmenting a contig
 
 """
 from simple_assembler import assemble_contig
-import string
 import random
 
 
@@ -47,7 +46,6 @@ def test_assemble_contig():
         # it will be too likely for there to be multiple ways to scaffold
         true_contig, fragments = create_contig_and_fragments(contig_scaffold, overlap_size, fragment_size)
         assert assemble_contig(fragments) == true_contig
-
 
 test_assemble_contig()
 

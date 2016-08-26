@@ -42,8 +42,6 @@ def assemble_two_fragments(contig_a, contig_b):
     :param str super_contig: The super contig.
     :param str contig: The Contig.
     :return: The assembled contig if assembly was successful, else None.
-
-
     >>> assemble_two_fragments('CT', 'CTA')
     'CTA'
     >>> assemble_two_fragments('CTCT', 'CTA')
